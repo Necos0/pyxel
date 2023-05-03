@@ -13,7 +13,7 @@ class App:
         pyxel.load("k.pyxres")
         self.state = flag.title
         self.player_x = 30
-        self.player_y = 96
+        self.player_y = 88
         self.player_dx = 0
         self.player_dy = 0
         self.player_g  =0
