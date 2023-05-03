@@ -19,10 +19,10 @@ class App:
         
     def update(self):
         #入力を受け入れる
-        if pyxel.btnp(pyxel.KEY_A):
+        if pyxel.btnp(pyxel.KEY_A) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
             self.vx -= 2
             self.map_x = 1
-        elif pyxel.btnp(pyxel.KEY_D):
+        elif pyxel.btnp(pyxel.KEY_D) or　pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
             self.vx += 2
             self.map_x = 0
         elif pyxel.btnp(pyxel.KEY_SPACE):
