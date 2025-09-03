@@ -1,5 +1,7 @@
 import pyxel
+import ai_minmax
 
+#定数
 COLS = 7
 ROWS = 6
 CELL = 20
@@ -16,8 +18,8 @@ IN_A_ROW = 4
 #リセットボタン
 BTN_W = 60
 BTN_H = 14
-BTN_X = 2 * MARGIN
-BTN_Y = 4 * MARGIN + BOARD_H
+BTN_X = MARGIN
+BTN_Y = 3 * MARGIN + BOARD_H
 
 
 class App:
@@ -60,7 +62,10 @@ class App:
         self.draw_board()
         self.draw_pieces()
         self.draw_reset_button()
-        pyxel.text(4 * MARGIN ,  2 * MARGIN + BOARD_H, self.message, 7)
+        if self.is_playing:
+            pyxel.text(MARGIN , 2 * MARGIN + BOARD_H, f"PLAYER{self.current_player}'s turn", 7)
+        else:
+            pyxel.text(MARGIN ,  2 * MARGIN + BOARD_H, self.message, 7)
 
 #描画
     def draw_board(self):
@@ -146,7 +151,7 @@ class App:
             cc += dc
         return cnt
     
-      # ------------ 引き分け判定 ------------
+#引き分け判定
     def is_board_full(self) -> bool:
         for r in range(ROWS):
             for c in range(COLS):
