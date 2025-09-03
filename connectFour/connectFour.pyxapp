@@ -1,0 +1,7 @@
+{
+  "entry_point": "connectFour.py",
+  "title": "Connect Four",
+  "author": "Yuto Wada",
+  "version": "1.0.0",
+  "resources": []
+}
