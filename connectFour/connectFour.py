@@ -160,4 +160,5 @@ class App:
         return (x - MARGIN) // CELL
 
         
-App()
+if __name__ == "__main__":
+    App()
